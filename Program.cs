@@ -1,3 +1,6 @@
+using HumanResource.DAL.Repository;
+using Microsoft.Extensions.DependencyInjection;
+
 namespace HumanResourceApp
 {
     internal static class Program
@@ -8,10 +11,13 @@ namespace HumanResourceApp
         [STAThread]
         static void Main()
         {
+
+            IUserRepository userRepository = new UserRepositoryImp();
+           
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new Register(userRepository));
         }
     }
 }

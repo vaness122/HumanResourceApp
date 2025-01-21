@@ -34,16 +34,18 @@
             Username_Label = new Label();
             button4 = new Button();
             button3 = new Button();
-            button2 = new Button();
-            Profile = new Button();
+            List_Users_Btn = new Button();
+            Change_ProfileBtn = new Button();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            checkBox1 = new CheckBox();
+            updatePassword_Btn = new TextBox();
+            label3 = new Label();
+            label1 = new Label();
             updateUsernameTextBox = new TextBox();
-            Update_Btn = new Button();
+            Update_User_Btn = new Button();
             panel3 = new Panel();
             welcomeLabel = new Label();
-            label1 = new Label();
-            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -59,6 +61,7 @@
             label2.Size = new Size(24, 25);
             label2.TabIndex = 7;
             label2.Text = "X";
+            label2.Click += label2_Click;
             // 
             // panel1
             // 
@@ -67,8 +70,8 @@
             panel1.Controls.Add(Username_Label);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(Profile);
+            panel1.Controls.Add(List_Users_Btn);
+            panel1.Controls.Add(Change_ProfileBtn);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(12, 34);
             panel1.Name = "panel1";
@@ -125,31 +128,32 @@
             button3.Text = "null";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // List_Users_Btn
             // 
-            button2.BackColor = Color.DarkSeaGreen;
-            button2.FlatStyle = FlatStyle.Popup;
-            button2.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(11, 187);
-            button2.Name = "button2";
-            button2.Size = new Size(128, 23);
-            button2.TabIndex = 4;
-            button2.Text = "List Of Users";
-            button2.UseVisualStyleBackColor = false;
+            List_Users_Btn.BackColor = Color.DarkSeaGreen;
+            List_Users_Btn.FlatStyle = FlatStyle.Popup;
+            List_Users_Btn.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+            List_Users_Btn.ForeColor = SystemColors.ButtonFace;
+            List_Users_Btn.Location = new Point(11, 187);
+            List_Users_Btn.Name = "List_Users_Btn";
+            List_Users_Btn.Size = new Size(128, 23);
+            List_Users_Btn.TabIndex = 4;
+            List_Users_Btn.Text = "List Of Users";
+            List_Users_Btn.UseVisualStyleBackColor = false;
+            List_Users_Btn.Click += List_Users_Btn_Click;
             // 
-            // Profile
+            // Change_ProfileBtn
             // 
-            Profile.BackColor = Color.DarkSeaGreen;
-            Profile.FlatStyle = FlatStyle.Popup;
-            Profile.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
-            Profile.ForeColor = SystemColors.ButtonFace;
-            Profile.Location = new Point(11, 167);
-            Profile.Name = "Profile";
-            Profile.Size = new Size(128, 23);
-            Profile.TabIndex = 3;
-            Profile.Text = "Profile";
-            Profile.UseVisualStyleBackColor = false;
+            Change_ProfileBtn.BackColor = Color.DarkSeaGreen;
+            Change_ProfileBtn.FlatStyle = FlatStyle.Popup;
+            Change_ProfileBtn.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+            Change_ProfileBtn.ForeColor = SystemColors.ButtonFace;
+            Change_ProfileBtn.Location = new Point(11, 167);
+            Change_ProfileBtn.Name = "Change_ProfileBtn";
+            Change_ProfileBtn.Size = new Size(128, 23);
+            Change_ProfileBtn.TabIndex = 3;
+            Change_ProfileBtn.Text = "Profile";
+            Change_ProfileBtn.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -164,34 +168,74 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ButtonFace;
+            panel2.Controls.Add(checkBox1);
+            panel2.Controls.Add(updatePassword_Btn);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(updateUsernameTextBox);
-            panel2.Controls.Add(Update_Btn);
+            panel2.Controls.Add(Update_User_Btn);
             panel2.Location = new Point(159, 34);
             panel2.Name = "panel2";
             panel2.Size = new Size(304, 294);
             panel2.TabIndex = 8;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(78, 178);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(97, 19);
+            checkBox1.TabIndex = 11;
+            checkBox1.Text = "See Password";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // updatePassword_Btn
+            // 
+            updatePassword_Btn.Location = new Point(78, 149);
+            updatePassword_Btn.Name = "updatePassword_Btn";
+            updatePassword_Btn.Size = new Size(161, 23);
+            updatePassword_Btn.TabIndex = 10;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+            label3.Location = new Point(78, 131);
+            label3.Name = "label3";
+            label3.Size = new Size(67, 13);
+            label3.TabIndex = 8;
+            label3.Text = "Password :";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+            label1.Location = new Point(78, 77);
+            label1.Name = "label1";
+            label1.Size = new Size(74, 13);
+            label1.TabIndex = 7;
+            label1.Text = "Username : ";
+            // 
             // updateUsernameTextBox
             // 
-            updateUsernameTextBox.Location = new Point(25, 58);
+            updateUsernameTextBox.Location = new Point(78, 95);
             updateUsernameTextBox.Name = "updateUsernameTextBox";
             updateUsernameTextBox.Size = new Size(161, 23);
             updateUsernameTextBox.TabIndex = 6;
             // 
-            // Update_Btn
+            // Update_User_Btn
             // 
-            Update_Btn.BackColor = Color.DarkOliveGreen;
-            Update_Btn.FlatStyle = FlatStyle.Popup;
-            Update_Btn.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            Update_Btn.ForeColor = Color.DarkSeaGreen;
-            Update_Btn.Location = new Point(211, 176);
-            Update_Btn.Name = "Update_Btn";
-            Update_Btn.Size = new Size(75, 23);
-            Update_Btn.TabIndex = 4;
-            Update_Btn.Text = "UPDATE";
-            Update_Btn.UseVisualStyleBackColor = false;
+            Update_User_Btn.BackColor = Color.OliveDrab;
+            Update_User_Btn.FlatStyle = FlatStyle.Popup;
+            Update_User_Btn.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            Update_User_Btn.ForeColor = Color.DarkSeaGreen;
+            Update_User_Btn.Location = new Point(164, 203);
+            Update_User_Btn.Name = "Update_User_Btn";
+            Update_User_Btn.Size = new Size(75, 23);
+            Update_User_Btn.TabIndex = 4;
+            Update_User_Btn.Text = "UPDATE";
+            Update_User_Btn.UseVisualStyleBackColor = false;
+            Update_User_Btn.Click += Update_User_Btn_Click;
             // 
             // panel3
             // 
@@ -214,24 +258,6 @@
             welcomeLabel.TabIndex = 1;
             welcomeLabel.Text = "Welcome ";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(25, 40);
-            label1.Name = "label1";
-            label1.Size = new Size(69, 15);
-            label1.TabIndex = 7;
-            label1.Text = "Username : ";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(25, 94);
-            label3.Name = "label3";
-            label3.Size = new Size(63, 15);
-            label3.TabIndex = 8;
-            label3.Text = "Password :";
-            // 
             // UserProfile
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -244,6 +270,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "UserProfile";
             Text = "UserProfile";
+            Load += UserProfile_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -262,15 +289,17 @@
         private Label Username_Label;
         private Button button4;
         private Button button3;
-        private Button button2;
-        private Button Profile;
+        private Button List_Users_Btn;
+        private Button Change_ProfileBtn;
         private PictureBox pictureBox1;
         private Panel panel2;
         private TextBox updateUsernameTextBox;
-        private Button Update_Btn;
+        private Button Update_User_Btn;
         private Panel panel3;
         private Label welcomeLabel;
         private Label label1;
         private Label label3;
+        private TextBox updatePassword_Btn;
+        private CheckBox checkBox1;
     }
 }

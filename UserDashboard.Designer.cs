@@ -36,7 +36,7 @@
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
-            Profile = new Button();
+            Profile_ToUserProfileBtn = new Button();
             pictureBox1 = new PictureBox();
             welcomeLabel = new Label();
             panel2 = new Panel();
@@ -62,7 +62,7 @@
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(Profile);
+            panel1.Controls.Add(Profile_ToUserProfileBtn);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(12, 35);
             panel1.Name = "panel1";
@@ -133,18 +133,19 @@
             button2.Text = "List Of Users";
             button2.UseVisualStyleBackColor = false;
             // 
-            // Profile
+            // Profile_ToUserProfileBtn
             // 
-            Profile.BackColor = Color.DarkSeaGreen;
-            Profile.FlatStyle = FlatStyle.Popup;
-            Profile.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
-            Profile.ForeColor = SystemColors.ButtonFace;
-            Profile.Location = new Point(11, 167);
-            Profile.Name = "Profile";
-            Profile.Size = new Size(128, 23);
-            Profile.TabIndex = 3;
-            Profile.Text = "Profile";
-            Profile.UseVisualStyleBackColor = false;
+            Profile_ToUserProfileBtn.BackColor = Color.DarkSeaGreen;
+            Profile_ToUserProfileBtn.FlatStyle = FlatStyle.Popup;
+            Profile_ToUserProfileBtn.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+            Profile_ToUserProfileBtn.ForeColor = SystemColors.ButtonFace;
+            Profile_ToUserProfileBtn.Location = new Point(11, 167);
+            Profile_ToUserProfileBtn.Name = "Profile_ToUserProfileBtn";
+            Profile_ToUserProfileBtn.Size = new Size(128, 23);
+            Profile_ToUserProfileBtn.TabIndex = 3;
+            Profile_ToUserProfileBtn.Text = "Profile";
+            Profile_ToUserProfileBtn.UseVisualStyleBackColor = false;
+            Profile_ToUserProfileBtn.Click += Profile_ToUserProfileBtn_Click;
             // 
             // pictureBox1
             // 
@@ -293,7 +294,7 @@
         private Button button4;
         private Button button3;
         private Button button2;
-        private Button Profile;
+        private Button Profile_ToUserProfileBtn;
         private Label welcomeLabel;
         private Panel panel2;
         private DataGridView UserDataGridView;

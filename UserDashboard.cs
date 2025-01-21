@@ -82,7 +82,7 @@ namespace HumanResourceApp
 
         private void Delete_Btn_Click(object sender, EventArgs e)
         {
-            if(UserDataGridView.SelectedRows.Count > 0)
+            if (UserDataGridView.SelectedRows.Count > 0)
             {
                 string username = UserDataGridView.SelectedRows[0].Cells["Username"].Value.ToString();
                 try
@@ -91,7 +91,7 @@ namespace HumanResourceApp
                     MessageBox.Show("User deleted successfully");
                     LoadUserData();
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     MessageBox.Show("Error deleting user" + ex.Message);
                 }
@@ -101,7 +101,14 @@ namespace HumanResourceApp
                 MessageBox.Show("Please select a user to delete");
             }
         }
-        
+
+        private void Profile_ToUserProfileBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            
+            UserProfile profile = new UserProfile(_userRepository, _loggedInUsername);
+            profile.Show();
+        }
     }
 
 }
